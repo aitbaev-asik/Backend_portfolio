@@ -1,4 +1,4 @@
-#!/home/asik/Backend/Portfolio/asik/core/venv/bin/python3
+#!/Users/kiri/lessons/rest/Backend_portfolio/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

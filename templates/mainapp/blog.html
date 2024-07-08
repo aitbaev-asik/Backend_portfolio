@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+   <!-- Blog Section -->
+   <section id="blog" class="section">
+    <div class="container text-center">
+        <h6 class="subtitle">Мой член</h6>
+        <h6 class="section-title mb-4">Х сантиметров</h6>
+        <p class="mb-5 pb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea impedit doloribus aspernatur ipsum at possimus voluptatibus quas ex, sint est dicta esse quasi, adipisci qui saepe illum aliquam tempora eum.<br> Детка love you</p>
+
+        <div class="row text-left">
+            {% for post in posts %}
+            <div class="col-md-4">
+                <div class="card border mb-4">
+                    {% if post.image %}
+            <img src="{{ post.image.url }}" alt="" class="card-img-top w-100">
+            {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <div class="post-details">
+                            <a href="javascript:void(0)">Posted By: Admin</a>
+                            <a href="javascript:void(0)"><i class="ti-thumb-up"></i> 10004</a>
+                            <a href="javascript:void(0)"><i class="ti-comment"></i> 123</a>
+                        </div>
+                        <p>{{ post.description }}</p>
+                        <a href="javascript:void(0)">Read More..</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

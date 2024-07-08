@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}About Me{% endblock %}
+
+{% block content %}
+<div class="about">
+    <h1>Full Name</h1>
+    <p>Position</p>
+    
+    <h2>Experience</h2>
+    <ul>
+        {% for experience in experiences %}
+        <li>
+            <h3>{{ experience.title }} at {{ experience.company_name }}</h3>
+            <p>{{ experience.from_date }} - {{ experience.to_date }}</p>
+            <p>{{ experience.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Education</h2>
+    <ul>
+        {% for education in education_list %}
+        <li>
+            <h3>{{ education.title }}, {{ education.speciality }} at {{ education.organization }}</h3>
+            <p>{{ education.from_date }} - {{ education.to_date }}</p>
+            <p>{{ education.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Testimonials</h2>
+    <ul>
+        {% for testimonial in testimonials %}
+        <li>
+            <h3>{{ testimonial.full_name }}, {{ testimonial.position }} at {{ testimonial.company }}</h3>
+            <img src="{{ testimonial.image.url }}" alt="Testimonial Photo">
+            <p>{{ testimonial.text }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
